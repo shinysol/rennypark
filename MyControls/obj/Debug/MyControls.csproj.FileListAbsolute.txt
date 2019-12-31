@@ -1,0 +1,17 @@
+D:\OneDrive\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Debug\MyControls.csproj.ResolveComReference.cache
+D:\OneDrive\문서\Visual Studio 2017\Projects\MyControls\MyControls\bin\Debug\MyControls.dll
+D:\OneDrive\문서\Visual Studio 2017\Projects\MyControls\MyControls\bin\Debug\MyControls.pdb
+D:\OneDrive\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Debug\Interop.ADODB.dll
+D:\OneDrive\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Debug\MyControls.dll
+D:\OneDrive\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Debug\MyControls.pdb
+D:\OneDrive\문서\Visual Studio 2017\Projects\MyControls\MyControls\bin\Debug\PdfSharp.Charting.dll
+D:\OneDrive\문서\Visual Studio 2017\Projects\MyControls\MyControls\bin\Debug\PdfSharp.dll
+D:\OneDrive\문서\Visual Studio 2017\Projects\MyControls\MyControls\bin\Debug\PdfSharp.xml
+D:\OneDrive\문서\Visual Studio 2017\Projects\MyControls\MyControls\bin\Debug\PdfSharp.Charting.xml
+D:\OneDrive\문서\Visual Studio 2017\Projects\MyControls\MyControls\bin\Debug\de\PdfSharp.resources.dll
+D:\OneDrive\문서\Visual Studio 2017\Projects\MyControls\MyControls\bin\Debug\de\PdfSharp.Charting.resources.dll
+D:\OneDrive\문서\Visual Studio 2017\Projects\MyControls\MyControls\bin\Debug\Interop.Acrobat.dll
+D:\OneDrive\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Debug\MyControls.csprojAssemblyReference.cache
+D:\OneDrive\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Debug\Interop.Acrobat.dll
+D:\OneDrive\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Debug\MyControls.csproj.CoreCompileInputs.cache
+D:\OneDrive\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Debug\MyControls.csproj.CopyComplete

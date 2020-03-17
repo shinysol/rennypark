@@ -460,6 +460,25 @@ namespace MyControls.Excel
             }
             ));
         }
+        public async Task AutoHeight(int sheet = 1, string range = "")
+        {
+            await Task.Run(new System.Action(() =>
+            {
+                sheets = xlWorkbook.Sheets;
+                setValueSheet = sheets.get_Item(sheet);
+                if (string.IsNullOrEmpty(range))
+                {
+                    setValueRange = setValueSheet.UsedRange;
+                }
+                else
+                {
+                    setValueRange = setValueSheet.Range[range];
+                }
+                range1 = setValueRange.Rows;
+                range1.AutoFit();
+            }
+            ));
+        }
         public async Task SetRowHeight(int sheet, string range, double height)
         {
             await Task.Run(new System.Action(() =>
@@ -518,6 +537,7 @@ namespace MyControls.Excel
         {
             await Task.Run(new System.Action(() =>
             {
+                xlApp.DisplayAlerts = false;
                 sheets = xlWorkbook.Sheets;
                 setValueSheet = sheets.get_Item(sheet);
                 setValueRange = setValueSheet.Range[range];

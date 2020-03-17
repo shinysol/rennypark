@@ -53,14 +53,14 @@ namespace MyControls
                 }
                 catch (Exception ex)
                 {
-                    try
-                    {
-                        //await Task.Run(() => tr.Rollback());
-                    }
-                    catch (Exception ex2)
-                    {
-                        throw ex2;
-                    }
+                    //try
+                    //{
+                    //    //await Task.Run(() => tr.Rollback());
+                    //}
+                    //catch (Exception ex2)
+                    //{
+                    //    throw ex2;
+                    //}
                     System.Diagnostics.Debug.Print(ex.ToString());
                     return -1;
                 }

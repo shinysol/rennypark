@@ -511,6 +511,27 @@ namespace MyControls
                 }
             }
         }
+        public DataTable ReturnDT(string QueryString, int Timeout = 30)
+        {
+            DataTable dt = new DataTable();
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                try
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = QueryString;
+                    cmd.CommandTimeout = Timeout;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    dt.Load(dr);
+                    return dt;
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+        }
         public async Task<DataTable> ReturnDTAsync(string QueryString, int Timeout = 30)
         {
             DataTable dt = new DataTable();

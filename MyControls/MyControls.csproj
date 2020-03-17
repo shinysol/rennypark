@@ -66,6 +66,12 @@
     <Compile Include="Control\TcmsControl.cs" />
     <Compile Include="Excel\EPPlus\EPPlusStandard.cs" />
     <Compile Include="Excel\ExcelModuleControl.cs" />
+    <Compile Include="Helper\BooleanHelper.cs" />
+    <Compile Include="Helper\ControlHelper.cs" />
+    <Compile Include="Helper\CurrencyHelper.cs" />
+    <Compile Include="Helper\DataHelper.cs" />
+    <Compile Include="Helper\ObjectHelper.cs" />
+    <Compile Include="Helper\StringHelper.cs" />
     <Compile Include="SQL\ConnectedSqlBaseSimple.cs" />
     <Compile Include="SQL\ConnectedSqlBase.cs" />
     <Compile Include="Crypto.cs" />
@@ -85,7 +91,6 @@
     <Compile Include="Smtpcontrol.cs" />
     <Compile Include="SQL\SqlMisc.cs" />
     <Compile Include="SQL\GeneralSql.cs" />
-    <Compile Include="SQL\Sqltotcms.cs" />
     <Compile Include="Structs.cs" />
     <Compile Include="TimeControl.cs" />
     <Compile Include="TypeMisc.cs" />

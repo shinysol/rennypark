@@ -27,7 +27,7 @@ D:\Users\박현우\문서\Visual Studio 2017\Projects\MyControls\MyControls\bin\
 D:\Users\박현우\문서\Visual Studio 2017\Projects\MyControls\MyControls\bin\Release\de\PdfSharp.Charting.resources.dll
 D:\Users\박현우\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Release\Interop.ADODB.dll
 D:\Users\박현우\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Release\MyControls.csproj.ResolveComReference.cache
-D:\Users\박현우\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Release\MyControls.csproj.CoreCompileInputs.cache
 D:\Users\박현우\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Release\MyControls.csproj.CopyComplete
 D:\Users\박현우\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Release\MyControls.dll
 D:\Users\박현우\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Release\MyControls.pdb
+D:\Users\박현우\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Release\MyControls.csprojAssemblyReference.cache

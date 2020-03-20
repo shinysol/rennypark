@@ -30,6 +30,10 @@ namespace MyControls.Helper
                 return "-1";
             }
         }
+        public static bool IsSelected(this ListBox lb)
+        {
+            return !lb.SelectedIndex.Equals(-1);
+        }
         public static bool IsSelected(this DataGrid dg)
         {
             return !dg.SelectedIndex.Equals(-1);
@@ -72,6 +76,23 @@ namespace MyControls.Helper
             {
                 e.Handled = true;
             }
+        }
+        public static string ToQueryText(this TextBox tbx)
+        {
+            return tbx is null ? string.Empty : tbx.Text.Trim().Replace("'", string.Empty).Replace(";", string.Empty).Trim();
+        }
+        public static string ToQueryText(this string str)
+        {
+            return str is null ? string.Empty : str.Trim().Replace("'", string.Empty).Replace(";", string.Empty).Trim();
+        }
+        public static string GetDisplayValue(this ListBox lbx)
+        {
+            if (lbx is null || !lbx.IsSelected()) return string.Empty;
+            if (lbx.SelectedItem is DataRow) return ((DataRow)lbx.SelectedItem)[lbx.DisplayMemberPath].ToString();
+            else if (lbx.SelectedItem is KeyValuePair<object, object>) return lbx.DisplayMemberPath.Equals("Value") ?
+                    (lbx.SelectedItem as KeyValuePair<object, object>?).Value.ToString() : ((KeyValuePair<object, object>)lbx.SelectedItem).Key.ToString();
+            else if (lbx.SelectedItem is string) return lbx.SelectedItem.ToString();
+            else throw new NotImplementedException("Function not defined for this case.");
         }
     }
 }

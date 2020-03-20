@@ -18,15 +18,15 @@ namespace MyControls.Helper
         {
             return dv is null || dv.Table.Rows.Count.Equals(0);
         }
-        public static void ColumnReplace(ref DataTable dt, string columnName, Dictionary<string, string> dic)
-        {
-            if (!dt.Columns.Contains(columnName)) throw new InvalidOperationException($"There is no column named {columnName}.");
-            if (!dt.Columns[columnName].DataType.Equals(typeof(string))) throw new InvalidOperationException("This operation is only with string type columns.");
-            foreach (DataRow dr in dt.Rows)
-            {
-                dr.SetField(columnName, dic.Aggregate(dr[columnName].ToString(), (result, s) => result.Replace(s.Key, s.Value)));
-            }
-        }
+        //public static void ColumnReplace(ref DataTable dt, string columnName, Dictionary<string, string> dic)
+        //{
+        //    if (!dt.Columns.Contains(columnName)) throw new InvalidOperationException($"There is no column named {columnName}.");
+        //    if (!dt.Columns[columnName].DataType.Equals(typeof(string))) throw new InvalidOperationException("This operation is only with string type columns.");
+        //    foreach (DataRow dr in dt.Rows)
+        //    {
+        //        dr.SetField(columnName, dic.Aggregate(dr[columnName].ToString(), (result, s) => result.Replace(s.Key, s.Value)));
+        //    }
+        //}
         
     }
 }

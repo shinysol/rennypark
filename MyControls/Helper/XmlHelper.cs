@@ -10,9 +10,9 @@ using System.Xml.Serialization;
 
 namespace MyControls.Helper
 {
-    class XmlHelper
+    public static class XmlHelper
     {
-        public async static Task<string> DataTableToXml(DataTable dt)
+        public async static Task<string> DataTableToXml(this DataTable dt)
         {
             // 2020/06/02 StringWriter 이용해서 DataTable을 Xml 스트링으로 변환
             return await Task.Run(() =>
@@ -25,7 +25,7 @@ namespace MyControls.Helper
                 }
             });
         }
-        public async static Task<DataTable> XmlToDataTable(string xml)
+        public async static Task<DataTable> XmlToDataTable(this string xml)
         {
             // 2020/06/02 Xml 스트링을 DataTable로 변환
             return await Task.Run(() =>

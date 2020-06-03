@@ -89,10 +89,14 @@ namespace MyControls.Helper
         {
             if (lbx is null || !lbx.IsSelected()) return string.Empty;
             if (lbx.SelectedItem is DataRow) return ((DataRow)lbx.SelectedItem)[lbx.DisplayMemberPath].ToString();
+            else if (lbx.SelectedItem is DataRowView) return ((DataRowView)lbx.SelectedItem)[lbx.DisplayMemberPath].ToString();
             else if (lbx.SelectedItem is KeyValuePair<object, object>) return lbx.DisplayMemberPath.Equals("Value") ?
                     (lbx.SelectedItem as KeyValuePair<object, object>?).Value.ToString() : ((KeyValuePair<object, object>)lbx.SelectedItem).Key.ToString();
             else if (lbx.SelectedItem is string) return lbx.SelectedItem.ToString();
-            else throw new NotImplementedException("Function not defined for this case.");
+            else
+            {
+                throw new NotImplementedException($"Function not defined for this case: {lbx.SelectedItem.GetType().ToString()}");
+            }
         }
     }
 }

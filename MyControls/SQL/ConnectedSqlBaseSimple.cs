@@ -323,11 +323,11 @@ namespace MyControls
                     }
                     return tempTable;
                 }
-                else return default(string);
+                else return default;
             }
             catch
             {
-                return default(string);
+                return default;
             }
         }
         public async Task<string> BulkUploadToGlobalTempTableAsync(DataTable dt, string columnDefinition)

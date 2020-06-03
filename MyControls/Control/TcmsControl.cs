@@ -39,6 +39,10 @@ namespace MyControls.Control
             {
                 return (control as Label).Content.ToString();
             }
+            else if (control is DataGrid)
+            {
+                return (control as DataGrid).SelectedValue.ToString();
+            }
             else
             {
                 throw new NotImplementedException();

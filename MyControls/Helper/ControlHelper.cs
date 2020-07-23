@@ -34,13 +34,17 @@ namespace MyControls.Helper
         {
             return !lb.SelectedIndex.Equals(-1);
         }
+        public static bool IsSelected(this ComboBox cb)
+        {
+            return !cb.SelectedIndex.Equals(-1);
+        }
         public static bool IsSelected(this DataGrid dg)
         {
-            return !dg.SelectedIndex.Equals(-1);
+            return !(dg.ItemsSource is null) && !dg.SelectedIndex.Equals(-1);
         }
         public static object SelectedRow(this DataGrid dg, string columnName)
         {
-            return (dg.SelectedItem as DataRowView)[columnName];
+            return dg.IsSelected() ? (dg.SelectedItem as DataRowView)[columnName] : null;
         }
         public static bool IsSourceNullOrHasZeroRows(this DataGrid dg)
         {

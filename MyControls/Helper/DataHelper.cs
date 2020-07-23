@@ -10,6 +10,14 @@ namespace MyControls.Helper
 {
     public static class DataHelper
     {
+        public static bool IsNull(this DataTable dt)
+        {
+            return dt is null;
+        }
+        public static bool IsNull(this DataView dv)
+        {
+            return dv is null;
+        }
         public static bool IsNullOrEmpty(this DataTable dt)
         {
             return dt is null || dt.Rows.Count.Equals(0);

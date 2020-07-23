@@ -32,11 +32,26 @@ namespace MyControls.Helper
             {
                 XmlDocument xDoc = new XmlDocument();
                 xDoc.LoadXml(xml);
-                using (System.Data.DataSet ds = new System.Data.DataSet())
+                using (DataSet ds = new DataSet())
                 using (XmlReader xReader = new XmlNodeReader(xDoc))
                 {
                     ds.ReadXml(xReader);
                     return ds.Tables.Count > 0 ? ds.Tables[0] : new DataTable();
+                }
+            });
+        }
+        public async static Task<DataSet> XmlToDataSet(this string xml)
+        {
+            // 2020/06/02 Xml 스트링을 DataTable로 변환
+            return await Task.Run(() =>
+            {
+                XmlDocument xDoc = new XmlDocument();
+                xDoc.LoadXml(xml);
+                using (DataSet ds = new DataSet())
+                using (XmlReader xReader = new XmlNodeReader(xDoc))
+                {
+                    ds.ReadXml(xReader);
+                    return ds.Tables.Count > 0 ? ds : null;
                 }
             });
         }

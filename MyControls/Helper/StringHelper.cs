@@ -24,5 +24,13 @@ namespace MyControls.Helper
         {
             return str.Replace("'", "").Replace(";", "");
         }
+        public static bool Equals(this string[] target, string[] source, int sourcePosition)
+        {
+            for (int i = 0; i < target.Count(); i++)
+            {
+                if (!target[i].Equals(source[sourcePosition + i])) return false;
+            }
+            return true;
+        }
     }
 }

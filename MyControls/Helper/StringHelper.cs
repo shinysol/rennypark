@@ -32,5 +32,11 @@ namespace MyControls.Helper
             }
             return true;
         }
+
+        public static string Split(this string str, int limit, int order)
+        {
+            if (order < 0) return string.Empty;
+            return str.Length <= limit * order ? string.Empty : str.Substring(limit * order, Math.Min(str.Length - limit * order, 75));
+        }
     }
 }

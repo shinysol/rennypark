@@ -21,6 +21,20 @@ namespace MyControls.Helper
             }
             return (bool)obj;
         }
+        public static decimal ToDecimal(this object obj)
+        {
+            bool tf = decimal.TryParse(obj.ToString(), out decimal dec);
+            return tf ? dec : 0;
+        }
+        public static double ToDouble(this object obj)
+        {
+            bool tf = double.TryParse(obj.ToString(), out double dec);
+            return tf ? dec : 0;
+        }
+        public static bool IsNull(this object obj)
+        {
+            return obj is null;
+        }
         public static bool EqualsDBNull(this object obj, bool TrueIfNull = true)
         {
             if (obj is null) return TrueIfNull;

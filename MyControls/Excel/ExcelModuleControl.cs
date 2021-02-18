@@ -5,6 +5,7 @@ using System.Data.OleDb;
 using System.Runtime.InteropServices;
 using Microsoft.Win32.SafeHandles;
 using Microsoft.Office.Interop.Excel;
+using System.Linq;
 
 namespace MyControls.Excel
 {
@@ -620,7 +621,46 @@ namespace MyControls.Excel
                     sheetName = dt.Rows[0]["TABLE_NAME"].ToString();
                     cmd.Connection = objConn;
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = string.Format("SELECT * FROM [{0}]", sheetName);
+                    cmd.CommandText = $"SELECT * FROM [{sheetName}]";
+                    using (OleDbDataAdapter oleda = new OleDbDataAdapter(cmd))
+                    {
+                        oleda.Fill(ds, "excelData");
+                        objConn.Close();
+                    }
+                }
+                return ds.Tables["excelData"];
+            });
+        }
+        public async Task<System.Data.DataTable> ConvertExcelToDataTableAsync(string FileName, string sheetName)
+        {
+            return await Task.Run(() =>
+            {
+                // Code from http://www.c-sharpcorner.com/code/788/how-to-convert-excel-to-datatable-in-C-Sharp.aspx
+                // when this doesn't work properly(especially - oledb 12.0 provider is not registered on local machine..)
+                // https://stackoverflow.com/questions/6649363/microsoft-ace-oledb-12-0-provider-is-not-registered-on-the-local-machine
+                // -> install this : https://www.microsoft.com/en-us/download/details.aspx?id=23734
+                DataSet ds = new DataSet();
+                using (OleDbConnection objConn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + FileName + ";Extended Properties='Excel 12.0 Xml;HDR=YES;IMEX=1;';"))
+                {
+                    objConn.Open();
+                    OleDbCommand cmd = new OleDbCommand();
+                    System.Data.DataTable dt = objConn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
+                    if (dt is null)
+                    {
+                        return null;
+                    }
+                    var tempDataTable = (from dataRow in dt.AsEnumerable()
+                                         where !dataRow["TABLE_NAME"].ToString().Contains("FilterDatabase")
+                                         select dataRow).CopyToDataTable();
+                    dt = tempDataTable;
+                    if (dt.AsEnumerable().Where(x => x.Field<string>("TABLE_NAME").Equals($"{sheetName}$")).Count().Equals(0))
+                    {
+                        return null;
+                    }
+                    int totalSheet = dt.Rows.Count; // No of excel sheets
+                    cmd.Connection = objConn;
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = $"SELECT * FROM [{sheetName}$]";
                     using (OleDbDataAdapter oleda = new OleDbDataAdapter(cmd))
                     {
                         oleda.Fill(ds, "excelData");

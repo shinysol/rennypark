@@ -363,7 +363,7 @@ namespace MyControls
             // -> install this : https://www.microsoft.com/en-us/download/details.aspx?id=23734
             System.Data.DataTable dtResult = null;
             int totalSheet = 0; //No of sheets on excel file  
-            using (OleDbConnection objConn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + FileName + ";Extended Properties='Excel 12.0;HDR=YES;IMEX=1;';"))
+            using (OleDbConnection objConn = new OleDbConnection($@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={FileName};Extended Properties='Excel 12.0;HDR=YES;IMEX=1;';"))
             {
                 objConn.Open();
                 OleDbCommand cmd = new OleDbCommand();

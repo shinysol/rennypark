@@ -11,11 +11,19 @@ namespace MyControls.Helper
     {
         public static bool IsDigit(this string str, int digits)
         {
-            return Regex.IsMatch(str, $@"\d{{{digits}}}");
+            return Regex.IsMatch(str, $@"^\d{{{digits}}}$");
+        }
+        public static bool IsAlphabet(this string str, int digits)
+        {
+            return Regex.IsMatch(str, $@"^[a-zA-Z]{{{digits}}}$");
         }
         public static bool IsAlphaNumeric(this string str)
         {
             return Regex.IsMatch(str, @"^[A-Z0-9]+$");
+        }
+        public static bool IsAlphaNumeric(this string str, int digits)
+        {
+            return Regex.IsMatch(str, $@"^[A-Z0-9]{{{digits}}}$");
         }
         public static bool IsCargoManagementNumberType(this string str)
         {

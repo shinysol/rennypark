@@ -15,3 +15,9 @@ D:\OneDrive\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Debug\M
 D:\OneDrive\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Debug\Interop.Acrobat.dll
 D:\OneDrive\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Debug\MyControls.csproj.CoreCompileInputs.cache
 D:\OneDrive\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Debug\MyControls.csproj.CopyComplete
+D:\Users\박현우\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Debug\MyControls.csprojAssemblyReference.cache
+D:\Users\박현우\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Debug\Interop.ADODB.dll
+D:\Users\박현우\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Debug\MyControls.csproj.ResolveComReference.cache
+D:\Users\박현우\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Debug\MyControls.csproj.CoreCompileInputs.cache
+D:\Users\박현우\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Debug\MyControls.dll
+D:\Users\박현우\문서\Visual Studio 2017\Projects\MyControls\MyControls\obj\Debug\MyControls.pdb

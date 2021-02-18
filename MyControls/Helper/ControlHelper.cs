@@ -102,5 +102,9 @@ namespace MyControls.Helper
                 throw new NotImplementedException($"Function not defined for this case: {lbx.SelectedItem.GetType().ToString()}");
             }
         }
+        public static string SelectedDateToString(this DatePicker dp) => dp.SelectedDate is null ? string.Empty : ((DateTime)dp.SelectedDate).ToString();
+        public static string SelectedDateToString(this DatePicker dp, IFormatProvider provider) => dp.SelectedDate is null ? string.Empty : ((DateTime)dp.SelectedDate).ToString(provider);
+        public static string SelectedDateToString(this DatePicker dp, string format) => dp.SelectedDate is null ? string.Empty : ((DateTime)dp.SelectedDate).ToString(format);
+        public static string SelectedDateToString(this DatePicker dp, string format, IFormatProvider provider) => dp.SelectedDate is null ? string.Empty : ((DateTime)dp.SelectedDate).ToString(format, provider);
     }
 }

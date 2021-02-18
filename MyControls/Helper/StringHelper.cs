@@ -38,5 +38,9 @@ namespace MyControls.Helper
             if (order < 0) return string.Empty;
             return str.Length <= limit * order ? string.Empty : str.Substring(limit * order, Math.Min(str.Length - limit * order, 75));
         }
+        public static string ToString(this string[] strArray, string separator)
+        {
+            return string.Join(separator, strArray);
+        }
     }
 }

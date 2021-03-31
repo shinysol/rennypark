@@ -21,6 +21,13 @@ namespace MyControls.Helper
             }
             return (bool)obj;
         }
+
+        public static DateTime ToDateTime(this object obj)
+        {
+            DateTime dtm;
+            if (obj is null || !DateTime.TryParse(obj.ToString(), out dtm)) return default;
+            return dtm;
+        }
         
         public static bool IsNull(this object obj)
         {

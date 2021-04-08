@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Controls;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,8 +26,10 @@ namespace MyControls.Helper
         public static DateTime ToDateTime(this object obj)
         {
             DateTime dtm;
-            if (obj is null || !DateTime.TryParse(obj.ToString(), out dtm)) return default;
-            return dtm;
+            if (obj is null) return default;
+            if (DateTime.TryParse(obj.ToString(), out dtm)) return dtm;
+            else if (DateTime.TryParseExact(obj.ToString(), "yyyyMMddHHmmSS", new CultureInfo("ko-KR"), DateTimeStyles.None, out dtm)) return dtm;
+            return default;
         }
         
         public static bool IsNull(this object obj)

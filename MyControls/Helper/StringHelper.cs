@@ -42,5 +42,38 @@ namespace MyControls.Helper
         {
             return string.Join(separator, strArray);
         }
+
+        public static string GetUntil(this string str, string value)
+        {
+            if (str.IndexOf(value, StringComparison.Ordinal) > 0)
+            {
+                return str.Substring(0, str.IndexOf(value, StringComparison.Ordinal));
+            }
+            return string.Empty;
+        }
+        public static string GetAfter(this string str, string value)
+        {
+            if (str.IndexOf(value, StringComparison.Ordinal) > 0)
+            {
+                return str.Substring(str.IndexOf(value, StringComparison.Ordinal) + value.Length);
+            }
+            return string.Empty;
+        }
+        public static string GetUntilFromEnd(this string str, string value)
+        {
+            if (str.LastIndexOf(value, StringComparison.Ordinal) > 0)
+            {
+                return str.Substring(str.LastIndexOf(value, StringComparison.Ordinal) + value.Length);
+            }
+            return string.Empty;
+        }
+        public static string GetAfterFromEnd(this string str, string value)
+        {
+            if (str.LastIndexOf(value, StringComparison.Ordinal) > 0)
+            {
+                return str.Substring(0, str.LastIndexOf(value, StringComparison.Ordinal) + value.Length - 1);
+            }
+            return string.Empty;
+        }
     }
 }

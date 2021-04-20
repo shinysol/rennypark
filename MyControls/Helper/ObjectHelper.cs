@@ -28,7 +28,8 @@ namespace MyControls.Helper
             DateTime dtm;
             if (obj is null) return default;
             if (DateTime.TryParse(obj.ToString(), out dtm)) return dtm;
-            else if (DateTime.TryParseExact(obj.ToString(), "yyyyMMddHHmmSS", new CultureInfo("ko-KR"), DateTimeStyles.None, out dtm)) return dtm;
+            else if (DateTime.TryParseExact(obj.ToString(), "yyyyMMdd", new CultureInfo("ko-KR"), DateTimeStyles.None, out dtm)) return dtm;
+            else if (DateTime.TryParseExact(obj.ToString(), "yyyyMMddHHmmss", new CultureInfo("ko-KR"), DateTimeStyles.None, out dtm)) return dtm;
             return default;
         }
         
